@@ -1,5 +1,5 @@
 {
-  "name": "dashboard",
+  "name": "tdashboard",
   "description": "Rancher Dashboard",
   "repository": "https://github.com/rancherlabs/dashboard",
   "license": "Apache-2.0",
