@@ -30,6 +30,7 @@ jobs:
         timeout-minutes: 20
         with:
           host: ${{ secrets.HOST_DNS }}
+          username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSH_KEY }}
           script: |
             cd ${{ secrets.TARGET_DIR }}
