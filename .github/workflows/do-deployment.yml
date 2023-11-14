@@ -19,7 +19,7 @@ jobs:
         with:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_KEY }}
           REMOTE_HOST: ${{ secrets.HOST_DNS }}
-           REMOTE_USER: ${{ secrets.USERNAME }}
+          REMOTE_USER: ${{ secrets.USERNAME }}
           TARGET: ${{ secrets.TARGET_DIR }}
   build:
     name: Docker build and deploy
