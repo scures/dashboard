@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - main
+      - UXUI
 
 jobs:
   pull:
@@ -17,9 +17,8 @@ jobs:
       - name: Pull the changes
         uses: easingthemes/ssh-deploy@main
         with:
-          SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_KEY }}
           REMOTE_HOST: ${{ secrets.HOST_DNS }}
-          REMOTE_USER: ${{ secrets.USERNAME }}
           TARGET: ${{ secrets.TARGET_DIR }}
   build:
     name: Docker build and deploy
@@ -31,8 +30,7 @@ jobs:
         timeout-minutes: 20
         with:
           host: ${{ secrets.HOST_DNS }}
-          username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.EC2_SSH_KEY }}
+          key: ${{ secrets.SSH_KEY }}
           script: |
             cd ${{ secrets.TARGET_DIR }}
             docker-compose down
