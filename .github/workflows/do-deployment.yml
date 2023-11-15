@@ -38,19 +38,19 @@ jobs:
             docker-compose down
             docker images | grep '<none>' | awk '{print $3}' | xargs docker rmi
             API=${{secrets.API}} docker-compose up -d --build
-  pm2:
-    name: Run project with PM2
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
-    steps:
-      - name: Executes docker-compose
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.HOST_DNS }}
-          username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.SSH_KEY }}
-          command_timeout: 200m
-          script: |
-            cd ${{ secrets.TARGET_DIR }}
-            yarn build
-            pm2 start ecosystem.config.js
+  # pm2:
+  #   name: Run project with PM2
+  #   runs-on: ubuntu-latest
+  #   timeout-minutes: 30
+  #   steps:
+  #     - name: Executes docker-compose
+  #       uses: appleboy/ssh-action@master
+  #       with:
+  #         host: ${{ secrets.HOST_DNS }}
+  #         username: ${{ secrets.USERNAME }}
+  #         key: ${{ secrets.SSH_KEY }}
+  #         command_timeout: 200m
+  #         script: |
+  #           cd ${{ secrets.TARGET_DIR }}
+  #           yarn build
+  #           pm2 start ecosystem.config.js
