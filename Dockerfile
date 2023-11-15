@@ -1,17 +1,21 @@
 # ---- Base Node ----
 FROM node:16-alpine AS base
 WORKDIR /src
-COPY package.json yarn.lock ./
+
+#  COPY package.json yarn.lock ./
+COPY package.json ./
 
 # ---- Dependencies ----
 FROM base AS dependencies
 RUN apk update && apk upgrade
-RUN yarn install --production --pure-lockfile
+# RUN yarn install --production --pure-lockfile
+RUN yarn install --production
 COPY . .
 
 # ---- Build ----
 FROM dependencies AS build
-RUN yarn install --pure-lockfile
+# RUN yarn install --pure-lockfile
+RUN yarn install
 ARG API
 ENV API=$API
 RUN yarn build
