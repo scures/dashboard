@@ -37,4 +37,4 @@ jobs:
             cd ${{ secrets.TARGET_DIR }}
             docker-compose down
             docker images | grep '<none>' | awk '{print $3}' | xargs docker rmi
-            API=${{secrets.API}} docker-compose up -d
+            API=${{secrets.API}} docker-compose up -d --build
