@@ -24,17 +24,17 @@ jobs:
   build:
     name: Docker build and deploy
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
     steps:
       - name: Executes docker-compose
         uses: appleboy/ssh-action@master
-        timeout-minutes: 20
         with:
           host: ${{ secrets.HOST_DNS }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSH_KEY }}
+          command_timeout: 200m
           script: |
             cd ${{ secrets.TARGET_DIR }}
             docker-compose down
             docker images | grep '<none>' | awk '{print $3}' | xargs docker rmi
-            API=${{secrets.API}} docker-compose up -d --build
+            API=${{secrets.API}} docker-compose up -d
