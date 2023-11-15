@@ -867,22 +867,9 @@ export default {
           margin-right: 16px;
         }
 
-        &.nuxt-link-active {
-          background: var(--primary-hover-bg);
+        &:hover:not(.nuxt-link-active) {
           color: var(--primary-hover-text);
-
-          svg {
-            fill: var(--primary-hover-text);
-          }
-
-          i {
-            color: var(--primary-hover-text);
-          }
-        }
-
-        &:hover {
-          color: var(--primary-hover-text);
-          background: var(--primary-hover-bg);
+          background: var(--nav-hover);
           > div {
             color: var(--primary-hover-text);
           }
@@ -900,6 +887,19 @@ export default {
               color:var(--default-text);
               display: block;
             }
+          }
+        }
+
+        &.nuxt-link-active {
+          background: var(--nav-selected-item);
+          color: var(--primary-hover-text);
+
+          svg {
+            fill: var(--primary-hover-text);
+          }
+
+          i {
+            color: var(--primary-hover-text);
           }
         }
 

@@ -57,20 +57,21 @@ BODY, .theme-light {
   --btn-primary__color: #FFFFFF;
   --btn-primary__bg: var(--primary);
   --btn-primary__bg--hover: #3472F7;
-  --btn-secondary__border: solid 1px transparent;
+  --btn-primary__border: solid 1px transparent;
   --btn-primary__color--disabled: #555555;
-  --btn-primary__bg--disabled: $light;
+  --btn-primary__bg--disabled: #{$light};
 
   --btn-secondary__color: var(--primary);
   --btn-secondary__bg: #FFFFFF;
-  --btn-secondary__bg--hover: #dbeaff;
+  // Hover LUM from 93% to 95%
+  --btn-secondary__bg--hover: #e5f0ff;
   --btn-secondary__border: solid 1px #e0e1e6;
   --btn-secondary__color--disabled: #888;
   --btn-secondary__bg--disabled: #FFFFFF;
 
   --btn-tertiary__color: var(--primary);
   --btn-tertiary__bg: transparent;
-  --btn-tertiary__bg--hover: #dbeaff;
+  --btn-tertiary__bg--hover: #e5f0ff;
   --btn-tertiary__border: solid 1px transparent;
   --btn-tertiary__color--disabled: #888888;
   --btn-tertiary__bg--disabled: transparent;
@@ -342,8 +343,10 @@ BODY, .theme-light {
   --header-border-size         : 1px;
   --nav-width                  : 250px;
   --nav-bg                     : #{$lightest};
-  --nav-active                 : #{$light};
-  --nav-hover                  : #{$medium};
+  --nav-active                 : #edf4fa;
+  --nav-active-category-color  : #444b69;
+  --nav-hover                  : #f4f5fb;
+  --nav-selected-item          : #444b69;
   --nav-expander-hover         : #{darken($medium, 10%)};
   --nav-border                 : #{$medium};
   --nav-border-size            : 1px;

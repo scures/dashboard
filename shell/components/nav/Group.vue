@@ -399,8 +399,8 @@ export default {
     }
 
     A {
-      color: var(--primary-hover-text);
-      background-color: var(--primary-hover-bg);
+      color: var(--primary-text);
+      background-color: var(--nav-selected-item);
       font-weight: bold;
     }
   }

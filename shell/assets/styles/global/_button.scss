@@ -34,7 +34,6 @@ button,
 
   &:hover {
     text-decoration: none;
-    color: var(--lightest);
   }
 
   &.bg-transparent {
@@ -69,14 +68,16 @@ button,
 .role-primary {
   background: var(--btn-primary__bg);
   color: var(--btn-primary__color);
-  border: var(--btn-secondary__border);
+  border: var(--btn-primary__border);
 
   &:hover, &._hover {
     background: var(--btn-primary__bg--hover);
+    color: var(--btn-primary__color);
   }
 
   &:focus, &.focused {
     background: var(--btn-primary__bg--hover);
+    color: var(--btn-primary__color);
   }
 
   &[disabled] {
@@ -92,10 +93,13 @@ button,
 
   &:hover, &._hover {
     background: var(--btn-secondary__bg--hover);
+    color: var(--btn-secondary__color);
+    border-color: transparent;
   }
 
   &:focus, &.focused {
     background: var(--btn-secondary__bg--hover);
+    color: var(--btn-secondary__color);
   }
 
   &.btn-sm {
@@ -119,10 +123,12 @@ button,
 
   &:hover, &._hover {
     background: var(--btn-tertiary__bg--hover);
+    color: var(--btn-tertiary__color);
   }
 
   &:focus, &.focused {
     background: var(--btn-tertiary__bg--hover);
+    color: var(--btn-tertiary__color);
   }
 
   &[disabled] {
