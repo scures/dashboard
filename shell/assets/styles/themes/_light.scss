@@ -12,7 +12,7 @@ $dark      : #B6B6C2;
 $medium    : #DCDEE7;
 
 //light inputs
-$light     : #EEEFF4;
+$light     : #e0e1e6;
 
 //light sidebar and box
 $lighter   : #F4F5FA;
@@ -23,9 +23,9 @@ $lightest  : #FFFFFF;
 //color for items that are not enabled
 $disabled  : $medium;
 
-$primary         : #3D98D3;
+$primary         : #2F68DF;
 $secondary       : $darker;
-$link            : #3D98D3;
+$link            : #2F68DF;
 
 // Status colors
 $success         : #5D995D;
@@ -54,6 +54,26 @@ BODY, .theme-light {
   --primary-banner-bg          : #{rgba($primary, 0.15)};
   --primary-light-bg           : #{rgba($primary, 0.05)};
 
+  --btn-primary__color: #FFFFFF;
+  --btn-primary__bg: var(--primary);
+  --btn-primary__bg--hover: #3472F7;
+  --btn-secondary__border: solid 1px transparent;
+  --btn-primary__color--disabled: #555555;
+  --btn-primary__bg--disabled: $light;
+
+  --btn-secondary__color: var(--primary);
+  --btn-secondary__bg: #FFFFFF;
+  --btn-secondary__bg--hover: #dbeaff;
+  --btn-secondary__border: solid 1px #e0e1e6;
+  --btn-secondary__color--disabled: #888;
+  --btn-secondary__bg--disabled: #FFFFFF;
+
+  --btn-tertiary__color: var(--primary);
+  --btn-tertiary__bg: transparent;
+  --btn-tertiary__bg--hover: #dbeaff;
+  --btn-tertiary__border: solid 1px transparent;
+  --btn-tertiary__color--disabled: #888888;
+  --btn-tertiary__bg--disabled: transparent;
 
   .text-primary {
     color: var(--primary) !important;
