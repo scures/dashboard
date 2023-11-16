@@ -930,7 +930,7 @@ export default {
                 :key="act.action"
                 v-clean-tooltip="actionTooltip"
                 type="button"
-                class="btn role-primary"
+                class="btn role-secondary"
                 :class="{[bulkActionClass]:true}"
                 :disabled="!act.enabled"
                 :data-testid="componentTestid + '-' + act.action"

@@ -282,5 +282,9 @@ export default {
       }
     }
   }
-
+  .accordion.group-highlight {
+    .child A:hover {
+      background: var(--nav-active-category--hover);
+    }
+  }
 </style>

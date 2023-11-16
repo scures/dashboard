@@ -63,7 +63,7 @@ export default {
   font-weight: 500;
 }
 .content {
-  background: var(--nav-active);
+  background: var(--nav-active-category);
   padding: 10px;
   margin-top: 6px;
   border-radius: 4px;

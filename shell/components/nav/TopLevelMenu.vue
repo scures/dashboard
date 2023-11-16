@@ -801,7 +801,7 @@ export default {
         align-items: center;
         cursor: pointer;
         display: flex;
-        color: var(--link);
+        color: var(--nav-icon-link);
         font-size: 14px;
         height: $option-height;
         white-space: nowrap;
@@ -861,20 +861,16 @@ export default {
         .rancher-provider-icon,
         svg {
           margin-right: 16px;
-          fill: var(--link);
+          fill: var(--nav-icon-link);
         }
         img {
           margin-right: 16px;
         }
 
         &:hover:not(.nuxt-link-active) {
-          color: var(--primary-hover-text);
           background: var(--nav-hover);
           > div {
             color: var(--primary-hover-text);
-          }
-          svg {
-            fill: var(--primary-hover-text);
           }
           div {
             color: var(--primary-hover-text);
