@@ -751,7 +751,7 @@ export default {
     flex-direction: column;
     padding: 0;
     overflow: hidden;
-    transition: width 500ms;
+    transition: width 150ms;
 
     &:focus {
       outline: 0;
@@ -869,12 +869,7 @@ export default {
 
         &:hover:not(.nuxt-link-active) {
           background: var(--nav-hover);
-          > div {
-            color: var(--primary-hover-text);
-          }
-          div {
-            color: var(--primary-hover-text);
-          }
+
           &.disabled {
             background: transparent;
             color: var(--muted);

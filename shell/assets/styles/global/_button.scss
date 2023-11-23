@@ -1,6 +1,6 @@
-$btn-padding: 0 21px 0 21px;
+$btn-padding: 0 16px 0 16px;
 $btn-sm-padding: 0 7px 0 7px;
-$btn-height: 40px;
+$btn-height: 42px;
 $btn-sm-height: 30px;
 
 
@@ -26,7 +26,7 @@ button,
   border-radius: var(--border-radius);
   color: var(--lightest);
   line-height: $btn-height;
-  min-height: $btn-height;
+  height: $btn-height;
 
   > .icon:not(:only-child) {
     margin-right: 6px;
@@ -91,10 +91,10 @@ button,
   color: var(--btn-secondary__color);
   border: var(--btn-secondary__border);
 
-  &:hover, &._hover {
+  &:hover:not([disabled]), &._hover {
     background: var(--btn-secondary__bg--hover);
     color: var(--btn-secondary__color);
-    border-color: transparent;
+    border-color: var(--btn-secondary__border--hover);
   }
 
   &:focus, &.focused {
@@ -178,6 +178,8 @@ fieldset[disabled] .btn {
   vertical-align: middle;
   padding: 0;
   border-radius: var(--border-radius);
+  //border: solid 2px var(--btn-secondary__border-color);
+  overflow: hidden;
 
   .btn {
     position: relative;
@@ -192,6 +194,27 @@ fieldset[disabled] .btn {
 
     &.active {
       @extend .bg-primary;
+    }
+
+    &.group-btn {
+      background: transparent;
+      background: var(--btn-group-bg);
+      //border: solid 2px #DCDEE7;
+      color: var(--body-text);
+
+      &:hover {
+        background: var(--btn-group-bg--hover);
+      }
+    }
+
+    &.group-btn--active {
+      background: var(--nav-selected-item);
+      background: var(--primary);
+      color: white;
+
+      &:hover {
+        cursor: default;
+      }
     }
 
     &:first-child {

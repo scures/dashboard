@@ -1603,7 +1603,7 @@ export default {
   }
 
   .search-box {
-    height: 40px;
+    height: 44px;
     margin-left: 10px;
     min-width: 180px;
   }
