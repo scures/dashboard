@@ -25,11 +25,12 @@ button,
   padding: $btn-padding;
   border-radius: var(--border-radius);
   color: var(--lightest);
-  line-height: $btn-height;
+  line-height: 14px;
   height: $btn-height;
 
   > .icon:not(:only-child) {
     margin-right: 6px;
+    font-size: 16px;
   }
 
   &:hover {
@@ -186,6 +187,7 @@ fieldset[disabled] .btn {
     display: inline-flex;
     border-radius: 0;
     text-align: center;
+    padding: 0 20px;
 
     &:focus {
       // Move the focused one to the top so that the focus ring is all visible
