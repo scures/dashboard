@@ -61,7 +61,7 @@ button,
 .btn-group-sm > .btn,
 .btn-sm .btn-label {
   padding: $btn-sm-padding;
-  min-height: $btn-sm-height;
+  height: $btn-sm-height;
   line-height: 28px;
 }
 
@@ -211,7 +211,7 @@ fieldset[disabled] .btn {
 
     &.group-btn--active {
       background: var(--nav-selected-item);
-      background: var(--primary);
+      //background: var(--primary);
       color: white;
 
       &:hover {
