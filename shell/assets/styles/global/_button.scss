@@ -1,6 +1,6 @@
 $btn-padding: 0 16px 0 16px;
 $btn-sm-padding: 0 7px 0 7px;
-$btn-height: 42px;
+$btn-height: 40px;
 $btn-sm-height: 30px;
 
 
@@ -71,13 +71,18 @@ button,
   color: var(--btn-primary__color);
   border: var(--btn-primary__border);
 
-  &:hover, &._hover {
+  &:hover:not([disabled]), &._hover {
     background: var(--btn-primary__bg--hover);
     color: var(--btn-primary__color);
   }
 
   &:focus, &.focused {
     background: var(--btn-primary__bg--hover);
+    color: var(--btn-primary__color);
+  }
+
+  &:active, &.active {
+    background: var(--btn-primary__bg--active);
     color: var(--btn-primary__color);
   }
 
@@ -94,13 +99,14 @@ button,
 
   &:hover:not([disabled]), &._hover {
     background: var(--btn-secondary__bg--hover);
-    color: var(--btn-secondary__color);
+    color: var(--btn-secondary__color--hover);
     border-color: var(--btn-secondary__border--hover);
   }
 
   &:focus, &.focused {
     background: var(--btn-secondary__bg--hover);
-    color: var(--btn-secondary__color);
+    color: var(--btn-secondary__color--hover);
+    border-color: var(--btn-secondary__border--hover);
   }
 
   &.btn-sm {
@@ -113,6 +119,7 @@ button,
 
   &[disabled] {
     color: var(--btn-secondary__color--disabled);
+    border-color: var(--btn-secondary__border--disabled);
     background: var(--btn-secondary__bg--disabled);
   }
 }
@@ -122,18 +129,21 @@ button,
   color: var(--btn-tertiary__color);
   border: var(--btn-tertiary__border);
 
-  &:hover, &._hover {
+  &:hover:not([disabled]), &._hover {
     background: var(--btn-tertiary__bg--hover);
-    color: var(--btn-tertiary__color);
+    border-color: var(--btn-tertiary__border--hover);
+    color: var(--btn-tertiary__color--hover);
   }
 
   &:focus, &.focused {
     background: var(--btn-tertiary__bg--hover);
-    color: var(--btn-tertiary__color);
+    border-color: var(--btn-tertiary__border--hover);
+    color: var(--btn-tertiary__color--hover);
   }
 
   &[disabled] {
     color: var(--btn-tertiary__color--disabled);
+    border-color: var(--btn-tertiary__border--disabled);
     background: var(--btn-tertiary__bg--disabled);
   }
 }
@@ -189,9 +199,14 @@ fieldset[disabled] .btn {
     text-align: center;
     padding: 0 20px;
 
+    .icon {
+      font-size: 16px;
+    }
+
     &:focus {
       // Move the focused one to the top so that the focus ring is all visible
       z-index: 1;
+      box-shadow: none;
     }
 
     &.active {
@@ -204,15 +219,18 @@ fieldset[disabled] .btn {
       //border: solid 2px #DCDEE7;
       color: var(--body-text);
 
-      &:hover {
+      &:hover,
+      &:focus {
         background: var(--btn-group-bg--hover);
       }
     }
 
     &.group-btn--active {
-      background: var(--nav-selected-item);
+      //background: var(--nav-selected-item);
       //background: var(--primary);
-      color: white;
+      background: transparent;
+      border: solid 2px var(--nav-selected-item);
+      color: var(--nav-selected-item);
 
       &:hover {
         cursor: default;

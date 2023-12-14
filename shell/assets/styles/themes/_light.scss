@@ -24,6 +24,8 @@ $lightest  : #FFFFFF;
 $disabled  : $medium;
 
 $primary         : #2F68DF;
+$primary-hover   : #1E56C7;
+$primary-active  : #1041A3;
 $secondary       : $darker;
 $link            : #2F68DF;
 
@@ -44,40 +46,49 @@ $drag-over: #DCDEE7;
 
 BODY, .theme-light {
 
-  --primary                    : #{$primary};
-  --primary-text               : #{contrast-color($primary)};
-  --primary-hover-bg           : #{darken($primary, 10%)};
-  --primary-hover-text         : #{saturate($lightest, 20%)};
-  --primary-active-bg          : #{darken($primary, 25%)};
-  --primary-active-text        : #{contrast-color(darken($primary, 25%))};
-  --primary-border             : #{$primary};
-  --primary-banner-bg          : #{rgba($primary, 0.15)};
-  --primary-light-bg           : #{rgba($primary, 0.05)};
+  --primary               : #{$primary};
+  --primary-hover         : #{$primary-hover};
+  --primary-active        : #{$primary-active};
+  --primary-text          : #{contrast-color($primary)};
+  --primary-hover-bg      : #{darken($primary, 10%)};
+  --primary-hover-text    : #{saturate($lightest, 20%)};
+  --primary-active-bg     : #{darken($primary, 25%)};
+  --primary-active-text   : #{contrast-color(darken($primary, 25%))};
+  --primary-border        : #{$primary};
+  --primary-banner-bg     : #{rgba($primary, 0.15)};
+  --primary-light-bg      : #{rgba($primary, 0.05)};
 
   --btn-primary__color            : #FFFFFF;
   --btn-primary__bg               : var(--primary);
-  --btn-primary__bg--hover        : #3472F7;
-  --btn-primary__border           : solid 2px transparent;
+  --btn-primary__bg--hover        : var(--primary-hover);
+  --btn-primary__bg--active       : var(--primary-active);
+  --btn-primary__border           : solid 1px transparent;
   --btn-primary__color--disabled  : #555555;
   --btn-primary__bg--disabled     : #{$light};
 
   --btn-secondary__color          : var(--primary);
   --btn-secondary__bg             : #FFFFFF;
   // Hover LUM from 93% to 95%
-  --btn-secondary__bg--hover      : #e5f0ff;
-  --btn-secondary__border-color   : #{$light};
+  --btn-secondary__border-color   : var(--primary);
+  --btn-secondary__bg--hover      : #F2F6FF;
   //--btn-secondary__border-color   : #B6B6C2;
-  --btn-secondary__border         : solid 2px var(--btn-secondary__border-color);
-  --btn-secondary__border--hover  : #cce1ff;
+  --btn-secondary__border         : solid 1px var(--btn-secondary__border-color);
+  --btn-secondary__color--hover   : var(--primary-hover);
+  --btn-secondary__border--hover  : var(--primary-hover);
   --btn-secondary__color--disabled: #888;
+  --btn-secondary__border--disabled: #888;
   --btn-secondary__bg--disabled   : #FFFFFF;
 
-  --btn-tertiary__color: var(--primary);
-  --btn-tertiary__bg: transparent;
-  --btn-tertiary__bg--hover: #e5f0ff;
-  --btn-tertiary__border: solid 2px transparent;
-  --btn-tertiary__color--disabled: #888888;
-  --btn-tertiary__bg--disabled: transparent;
+  --btn-tertiary__color           : var(--primary);
+  --btn-tertiary__border-color    : #D3D6DE;
+  --btn-tertiary__border          : solid 1px var(--btn-tertiary__border-color);
+  --btn-tertiary__bg              : #ffffff;
+  --btn-tertiary__bg--hover       : #F7FAFF;
+  --btn-tertiary__border--hover   : #DFE2EB;
+  --btn-tertiary__color--hover    : var(--primary-hover);
+  --btn-tertiary__color--disabled : #888888;
+  --btn-tertiary__border--disabled: #E0E1E6;
+  --btn-tertiary__bg--disabled    : #ffffff;
 
   --btn-group-bg                  : #{$lighter};
   --btn-group-bg--hover           : #e3e6f2;
@@ -103,6 +114,7 @@ BODY, .theme-light {
   }
 
   --link                    : #{$link};
+  --link--hover             : var(--primary-hover);
   --link-text               : #{contrast-color($link)};
   --link-hover-bg           : #{darken($link, 10%)};
   --link-hover-text         : #{saturate($lightest, 20%)};
