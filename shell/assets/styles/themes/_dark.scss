@@ -43,6 +43,45 @@
   --slider-light-bg            : #{rgba($darker, 1)};
   --slider-light-bg-right      : #{rgba($darker, 0)};
 
+  --primary                       : #577BFF;
+  --primary-hover                 : #4366E6;
+  --primary-active                : #3354CC;
+  --btn-primary__color            : #FFF;
+  --btn-primary__bg               : var(--primary);
+  --btn-primary__bg--hover        : var(--primary-hover);
+  --btn-primary__bg--active       : var(--primary-active);
+  --btn-primary__border           : solid 1px transparent;
+  --btn-primary__color--disabled  : #ffffff;
+  --btn-primary__bg--disabled     : #6B77A3;
+
+  --secondary                     : #7ca6ff;
+  --secondary-hover               : #25324D;
+  --secondary-hover-color         : #a4c1ff;
+  --secondary-active              : #0C101A;
+  --btn-secondary__color          : var(--secondary);
+  --btn-secondary__bg             : transparent;
+  // Hover LUM from 93% to 95%
+  --btn-secondary__border-color   : var(--secondary);
+  --btn-secondary__bg--hover      : var(--secondary-hover);
+  //--btn-secondary__border-color   : #B6B6C2;
+  --btn-secondary__border         : solid 1px var(--btn-secondary__border-color);
+  --btn-secondary__color--hover   : var(--secondary-hover-color);
+  --btn-secondary__border--hover  : var(--secondary-hover-color);
+  --btn-secondary__color--disabled: #BFBFBF;
+  --btn-secondary__border--disabled: #BFBFBF;
+  --btn-secondary__bg--disabled   : transparent;
+
+  --btn-tertiary__color           : var(--secondary);
+  --btn-tertiary__border-color    : #494A4D;
+  --btn-tertiary__border          : solid 1px var(--btn-tertiary__border-color);
+  --btn-tertiary__bg              : transparent;
+  --btn-tertiary__bg--hover       : #1E2433;
+  --btn-tertiary__border--hover   : #616366;
+  --btn-tertiary__color--hover    : var(--secondary-hover-color);
+  --btn-tertiary__color--disabled : #BFBFBF;
+  --btn-tertiary__border--disabled: #595959;
+  --btn-tertiary__bg--disabled    : transparent;
+ 
   --muted                      : #{$disabled};
 
   --body-bg                    : #{$darker};
