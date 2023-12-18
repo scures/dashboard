@@ -140,4 +140,16 @@ export default {
       color: var(--muted);
     }
   }
+
+  .nuxt-link-active {
+    .cluster-badge-logo {
+      background: var(--nav-icon-badge-bg--active);
+      border-color: var(--nav-icon-badge-border--active);
+      color: var(--nav-icon-badge-color--active);
+    }
+
+    .cluster-pin-icon {
+      color: var(--nav-icon-badge-color--active); 
+    }
+  }
 </style>

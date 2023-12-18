@@ -309,12 +309,12 @@ export default {
   .accordion {
     .header {
       &.active {
-        color: var(--primary-hover-text);
+        color: var(--nav-active-category-color);
         background-color: var(--nav-selected-item);
 
         h6 {
           font-weight: bold;
-          color: var(--primary-hover-text);
+          color: var(--nav-active-category-color);
         }
 
         &:hover {
@@ -404,11 +404,11 @@ export default {
     padding: 0;
 
     A, A I {
-      color: var(--primary-hover-text);
+      color: var(--nav-active-category-color);
     }
 
     A {
-      color: var(--primary-text);
+      color: var(--nav-active-category-color);
       background-color: var(--nav-selected-item);
       font-weight: bold;
 

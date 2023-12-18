@@ -801,7 +801,7 @@ export default {
         align-items: center;
         cursor: pointer;
         display: flex;
-        color: var(--nav-icon-link);
+        color: var(--body-text);
         font-size: 14px;
         height: $option-height;
         white-space: nowrap;
@@ -861,7 +861,7 @@ export default {
         .rancher-provider-icon,
         svg {
           margin-right: 16px;
-          fill: var(--nav-icon-link);
+          fill: var(--body-text);
         }
         img {
           margin-right: 16px;

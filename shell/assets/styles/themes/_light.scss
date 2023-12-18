@@ -363,7 +363,7 @@ BODY, .theme-light {
   --nav-bg                     : #{$lightest};
   --nav-hover                  : #f4f5fb;
   --nav-active-category        : #edf4fa;
-  --nav-active-category-color  : #444b69;
+  --nav-active-category-color  : #ffffff;
   --nav-active-category--hover : #d7e6f4;
   --nav-selected-item          : #444b69;
   --nav-selected-item--hover   : #596088;
@@ -372,6 +372,10 @@ BODY, .theme-light {
   --nav-border                 : #{$medium};
   --nav-border-size            : 1px;
   --nav-icon-badge-bg          : #{$lightest};
+
+  --nav-icon-badge-bg--active     : rgba(0, 0, 0, 0.5);
+  --nav-icon-badge-border--active : #{$dark};
+  --nav-icon-badge-color--active  : #FFFFFF;
 
   --footer-bg                  : transparent;
   --footer-height              : 0px;

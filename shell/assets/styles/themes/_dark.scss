@@ -106,6 +106,17 @@
   --nav-expander-hover         : var(--primary-banner-bg);
   --nav-icon-badge-bg          : #{$dark};
 
+  --nav-hover                  : #292D47;
+  --nav-active-category        : #2F3140;
+  --nav-active-category-color  : #000000;
+  --nav-active-category--hover : #414459;
+  --nav-selected-item          : #8AB1FF;
+  --nav-selected-item--hover   : #BFC8FF;
+
+  --nav-icon-badge-bg--active     : #FFFFFF;
+  --nav-icon-badge-border--active : transparent;
+  --nav-icon-badge-color--active  : #000000;
+
   --disabled-bg                : #{darken($disabled, 10%)};
   --disabled-text              : #{$secondary};
   --box-bg                     : #{$darkest};
