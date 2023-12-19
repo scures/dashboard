@@ -31,6 +31,9 @@
 
   $drag-over: #DCDEE7;
 
+  --link: #719FFF;
+  --link--hover: #8AAFFF;
+
   --default                    : #{$dark};
   --default-text               : #{$light};
   --default-hover-bg           : #{darken($dark, 10%)};
@@ -53,6 +56,10 @@
   --btn-primary__border           : solid 1px transparent;
   --btn-primary__color--disabled  : #ffffff;
   --btn-primary__bg--disabled     : #6B77A3;
+
+  --btn-group-bg                  : #454854;
+  --btn-group-bg--hover           : #5A5E6E;
+  --btn-group-color               : #D3D3E6;
 
   --secondary                     : #7ca6ff;
   --secondary-hover               : #25324D;
@@ -110,12 +117,13 @@
   --nav-active-category        : #2F3140;
   --nav-active-category-color  : #000000;
   --nav-active-category--hover : #414459;
-  --nav-selected-item          : #8AB1FF;
-  --nav-selected-item--hover   : #BFC8FF;
+  --nav-selected-item          : #a3c2ff;
+  --nav-selected-item--hover   : #b8cfff;
 
   --nav-icon-badge-bg--active     : #FFFFFF;
   --nav-icon-badge-border--active : transparent;
   --nav-icon-badge-color--active  : #000000;
+  --nav-icon-badge-border--active : none;
 
   --disabled-bg                : #{darken($disabled, 10%)};
   --disabled-text              : #{$secondary};

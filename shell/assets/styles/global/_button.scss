@@ -218,7 +218,7 @@ fieldset[disabled] .btn {
       background: transparent;
       background: var(--btn-group-bg);
       //border: solid 2px #DCDEE7;
-      color: var(--body-text);
+      color: var(--btn-group-color);
 
       &:hover,
       &:focus {

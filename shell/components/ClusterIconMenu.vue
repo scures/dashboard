@@ -110,8 +110,8 @@ export default {
   }
   .cluster-pin-icon {
     position: absolute;
-    top: -6px;
-    right: -4px;
+    top: -7px;
+    right: -6px;
     font-size: 12px;
     transform: scaleX(-1);
     color: var(--body-text);
@@ -149,7 +149,9 @@ export default {
     }
 
     .cluster-pin-icon {
-      color: var(--nav-icon-badge-color--active); 
+      color: var(--nav-icon-badge-color--active);
+      -webkit-text-stroke: var(--nav-icon-badge-border--active); 
+      font-size: 16px;
     }
   }
 </style>

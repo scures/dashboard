@@ -27,7 +27,7 @@ $primary         : #2F68DF;
 $primary-hover   : #1E56C7;
 $primary-active  : #1041A3;
 $secondary       : $darker;
-$link            : #2F68DF;
+$link            : #2E68DF;
 
 // Status colors
 $success         : #5D995D;
@@ -92,6 +92,7 @@ BODY, .theme-light {
 
   --btn-group-bg                  : #{$lighter};
   --btn-group-bg--hover           : #e3e6f2;
+  --btn-group-color               : #54545C;
 
   .text-primary {
     color: var(--primary) !important;
@@ -114,7 +115,7 @@ BODY, .theme-light {
   }
 
   --link                    : #{$link};
-  --link--hover             : var(--primary-hover);
+  --link--hover             :  ;
   --link-text               : #{contrast-color($link)};
   --link-hover-bg           : #{darken($link, 10%)};
   --link-hover-text         : #{saturate($lightest, 20%)};
@@ -373,9 +374,10 @@ BODY, .theme-light {
   --nav-border-size            : 1px;
   --nav-icon-badge-bg          : #{$lightest};
 
-  --nav-icon-badge-bg--active     : rgba(0, 0, 0, 0.5);
-  --nav-icon-badge-border--active : #{$dark};
-  --nav-icon-badge-color--active  : #FFFFFF;
+  --nav-icon-badge-bg--active     : #ffffff;
+  --nav-icon-badge-border--active : transparent;
+  --nav-icon-badge-color--active  : #000000;
+  --nav-icon-badge-border--active : 1px white;
 
   --footer-bg                  : transparent;
   --footer-height              : 0px;
