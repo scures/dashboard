@@ -309,20 +309,25 @@ export default {
   .accordion {
     .header {
       &.active {
-        color: var(--primary-hover-text);
-        background-color: var(--primary-hover-bg);
+        color: var(--nav-active-category-color);
+        background-color: var(--nav-selected-item);
 
         h6 {
           font-weight: bold;
-          color: var(--primary-hover-text);
+          color: var(--nav-active-category-color);
         }
 
         &:hover {
-          background-color: var(--primary-hover-bg);
+          background-color: var(--nav-selected-item--hover);
         }
       }
       &:hover:not(.active) {
         background-color: var(--nav-hover);
+      }
+    }
+    &.group-highlight .header {
+      &:hover:not(.active) {
+        background: var(--nav-active-category--hover);
       }
     }
   }
@@ -355,7 +360,11 @@ export default {
       }
 
       &.group-highlight {
-        background: var(--nav-active);
+        background: var(--nav-active-category);
+
+        .header h6 {
+          font-weight: bold;
+        }
       }
     }
 
@@ -395,13 +404,17 @@ export default {
     padding: 0;
 
     A, A I {
-      color: var(--primary-hover-text);
+      color: var(--nav-active-category-color);
     }
 
     A {
-      color: var(--primary-hover-text);
-      background-color: var(--primary-hover-bg);
+      color: var(--nav-active-category-color);
+      background-color: var(--nav-selected-item);
       font-weight: bold;
+
+      &:hover {
+        background: var(--nav-selected-item--hover);
+      }
     }
   }
 

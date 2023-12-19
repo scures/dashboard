@@ -8,12 +8,12 @@ export default {
 
     inactiveClass: {
       type:    String,
-      default: 'bg-disabled',
+      default: 'group-btn',
     },
 
     activeClass: {
       type:    String,
-      default: 'bg-primary',
+      default: 'group-btn--active',
     },
 
     options: {

@@ -585,7 +585,7 @@ export default {
 
       &.nuxt-link-active:not(:hover) {
         A {
-          background-color: var(--nav-active);
+          background-color: var(--nav-active-category);
         }
       }
     }

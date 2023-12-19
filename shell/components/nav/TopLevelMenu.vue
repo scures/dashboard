@@ -751,7 +751,7 @@ export default {
     flex-direction: column;
     padding: 0;
     overflow: hidden;
-    transition: width 500ms;
+    transition: width 150ms;
 
     &:focus {
       outline: 0;
@@ -801,7 +801,7 @@ export default {
         align-items: center;
         cursor: pointer;
         display: flex;
-        color: var(--link);
+        color: var(--body-text);
         font-size: 14px;
         height: $option-height;
         white-space: nowrap;
@@ -861,37 +861,15 @@ export default {
         .rancher-provider-icon,
         svg {
           margin-right: 16px;
-          fill: var(--link);
+          fill: var(--body-text);
         }
         img {
           margin-right: 16px;
         }
 
-        &.nuxt-link-active {
-          background: var(--primary-hover-bg);
-          color: var(--primary-hover-text);
+        &:hover:not(.nuxt-link-active) {
+          background: var(--nav-hover);
 
-          svg {
-            fill: var(--primary-hover-text);
-          }
-
-          i {
-            color: var(--primary-hover-text);
-          }
-        }
-
-        &:hover {
-          color: var(--primary-hover-text);
-          background: var(--primary-hover-bg);
-          > div {
-            color: var(--primary-hover-text);
-          }
-          svg {
-            fill: var(--primary-hover-text);
-          }
-          div {
-            color: var(--primary-hover-text);
-          }
           &.disabled {
             background: transparent;
             color: var(--muted);
@@ -900,6 +878,19 @@ export default {
               color:var(--default-text);
               display: block;
             }
+          }
+        }
+
+        &.nuxt-link-active {
+          background: var(--nav-selected-item);
+          color: var(--primary-hover-text);
+
+          svg {
+            fill: var(--primary-hover-text);
+          }
+
+          i {
+            color: var(--primary-hover-text);
           }
         }
 

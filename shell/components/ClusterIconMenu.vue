@@ -110,8 +110,8 @@ export default {
   }
   .cluster-pin-icon {
     position: absolute;
-    top: -6px;
-    right: -4px;
+    top: -7px;
+    right: -6px;
     font-size: 12px;
     transform: scaleX(-1);
     color: var(--body-text);
@@ -139,5 +139,23 @@ export default {
       filter: grayscale(1);
       color: var(--muted);
     }
+  }
+
+  .nuxt-link-active {
+    .cluster-badge-logo {
+      background: var(--nav-icon-badge-bg--active);
+      border-color: var(--nav-icon-badge-border--active);
+      color: var(--nav-icon-badge-color--active);
+    }
+
+    .cluster-pin-icon {
+      color: var(--nav-icon-badge-color--active);
+      -webkit-text-stroke: var(--nav-pin-border--active); 
+      font-size: 16px;
+    }
+  }
+
+  .rancher-icon-fill {
+    fill: var(--brand);
   }
 </style>

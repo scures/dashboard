@@ -12,7 +12,7 @@ $dark      : #B6B6C2;
 $medium    : #DCDEE7;
 
 //light inputs
-$light     : #EEEFF4;
+$light     : #e0e1e6;
 
 //light sidebar and box
 $lighter   : #F4F5FA;
@@ -23,9 +23,11 @@ $lightest  : #FFFFFF;
 //color for items that are not enabled
 $disabled  : $medium;
 
-$primary         : #3D98D3;
+$primary         : #2F68DF;
+$primary-hover   : #1E56C7;
+$primary-active  : #1041A3;
 $secondary       : $darker;
-$link            : #3D98D3;
+$link            : #2E68DF;
 
 // Status colors
 $success         : #5D995D;
@@ -36,6 +38,8 @@ $info            : #3D98D3;
 $contrasted-dark: $darkest !default;
 $contrasted-light: $lightest !default;
 
+$brand: #2453FF;
+
 // Text selection color for terminal window (we don't want this to change with the primary color)
 // The terminal alway uses a light background, so okay to use a fixed color
 $selected: rgba(#3D98D3, .5);
@@ -44,16 +48,59 @@ $drag-over: #DCDEE7;
 
 BODY, .theme-light {
 
-  --primary                    : #{$primary};
-  --primary-text               : #{contrast-color($primary)};
-  --primary-hover-bg           : #{darken($primary, 10%)};
-  --primary-hover-text         : #{saturate($lightest, 20%)};
-  --primary-active-bg          : #{darken($primary, 25%)};
-  --primary-active-text        : #{contrast-color(darken($primary, 25%))};
-  --primary-border             : #{$primary};
-  --primary-banner-bg          : #{rgba($primary, 0.15)};
-  --primary-light-bg           : #{rgba($primary, 0.05)};
+  --selected-item: #444b69;
 
+  --primary               : #{$primary};
+  --primary-hover         : #{$primary-hover};
+  --primary-active        : #{$primary-active};
+  --primary-text          : #{contrast-color($primary)};
+  --primary-hover-bg      : #{darken($primary, 10%)};
+  --primary-hover-text    : #{saturate($lightest, 20%)};
+  --primary-active-bg     : #{darken($primary, 25%)};
+  --primary-active-text   : #{contrast-color(darken($primary, 25%))};
+  --primary-border        : #{$primary};
+  --primary-banner-bg     : #{rgba($primary, 0.15)};
+  --primary-light-bg      : #{rgba($primary, 0.05)};
+
+  --brand: #{$brand};
+
+  --btn-primary__color            : #FFFFFF;
+  --btn-primary__bg               : var(--primary);
+  --btn-primary__bg--hover        : var(--primary-hover);
+  --btn-primary__bg--active       : var(--primary-active);
+  --btn-primary__border           : solid 1px transparent;
+  --btn-primary__color--disabled  : #555555;
+  --btn-primary__bg--disabled     : #{$light};
+
+  --btn-secondary__color          : var(--primary);
+  --btn-secondary__bg             : #FFFFFF;
+  // Hover LUM from 93% to 95%
+  --btn-secondary__border-color   : var(--primary);
+  --btn-secondary__bg--hover      : #F2F6FF;
+  //--btn-secondary__border-color   : #B6B6C2;
+  --btn-secondary__border         : solid 1px var(--btn-secondary__border-color);
+  --btn-secondary__color--hover   : var(--primary-hover);
+  --btn-secondary__border--hover  : var(--primary-hover);
+  --btn-secondary__color--disabled: #888;
+  --btn-secondary__border--disabled: #888;
+  --btn-secondary__bg--disabled   : #FFFFFF;
+
+  --btn-tertiary__color           : var(--primary);
+  --btn-tertiary__border-color    : #D3D6DE;
+  --btn-tertiary__border          : solid 1px var(--btn-tertiary__border-color);
+  --btn-tertiary__bg              : #ffffff;
+  --btn-tertiary__bg--hover       : #F7FAFF;
+  --btn-tertiary__border--hover   : #DFE2EB;
+  --btn-tertiary__color--hover    : var(--primary-hover);
+  --btn-tertiary__color--disabled : #888888;
+  --btn-tertiary__border--disabled: #E0E1E6;
+  --btn-tertiary__bg--disabled    : #ffffff;
+
+  --btn-group-bg                  : #{$lighter};
+  --btn-group-bg--hover           : #e3e6f2;
+  --btn-group-color               : #54545C;
+
+  --btn-group-color--active       : #FFFFFF;
 
   .text-primary {
     color: var(--primary) !important;
@@ -76,6 +123,7 @@ BODY, .theme-light {
   }
 
   --link                    : #{$link};
+  --link--hover             :  ;
   --link-text               : #{contrast-color($link)};
   --link-hover-bg           : #{darken($link, 10%)};
   --link-hover-text         : #{saturate($lightest, 20%)};
@@ -322,12 +370,22 @@ BODY, .theme-light {
   --header-border-size         : 1px;
   --nav-width                  : 250px;
   --nav-bg                     : #{$lightest};
-  --nav-active                 : #{$light};
-  --nav-hover                  : #{$medium};
+  --nav-hover                  : #f4f5fb;
+  --nav-active-category        : #edf4fa;
+  --nav-active-category-color  : #ffffff;
+  --nav-active-category--hover : #d7e6f4;
+  --nav-selected-item          : var(--selected-item);
+  --nav-selected-item--hover   : #596088;
+  --nav-icon-link              : var(--nav-selected-item);
   --nav-expander-hover         : #{darken($medium, 10%)};
   --nav-border                 : #{$medium};
   --nav-border-size            : 1px;
   --nav-icon-badge-bg          : #{$lightest};
+
+  --nav-icon-badge-bg--active     : #ffffff;
+  --nav-icon-badge-border--active : transparent;
+  --nav-icon-badge-color--active  : #000000;
+  --nav-pin-border--active : 1px white;
 
   --footer-bg                  : transparent;
   --footer-height              : 0px;

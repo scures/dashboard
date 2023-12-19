@@ -1,7 +1,9 @@
-$btn-padding: 0 21px 0 21px;
+$btn-padding: 0 16px 0 16px;
 $btn-sm-padding: 0 7px 0 7px;
 $btn-height: 40px;
 $btn-sm-height: 30px;
+
+
 
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the button component.
@@ -23,16 +25,16 @@ button,
   padding: $btn-padding;
   border-radius: var(--border-radius);
   color: var(--lightest);
-  line-height: $btn-height;
-  min-height: $btn-height;
+  line-height: 14px;
+  height: $btn-height;
 
   > .icon:not(:only-child) {
     margin-right: 6px;
+    font-size: 16px;
   }
 
   &:hover {
     text-decoration: none;
-    color: var(--lightest);
   }
 
   &.bg-transparent {
@@ -59,39 +61,52 @@ button,
 .btn-group-sm > .btn,
 .btn-sm .btn-label {
   padding: $btn-sm-padding;
-  min-height: $btn-sm-height;
+  height: $btn-sm-height;
   line-height: 28px;
 }
 
 //btn roles
 .role-primary {
-  background: var(--primary);
-  color: var(--primary-text);
+  background: var(--btn-primary__bg);
+  color: var(--btn-primary__color);
+  border: var(--btn-primary__border);
 
-  &:hover, &._hover {
-    background-color: var(--primary-hover-bg);
-    color: var(--primary-text);
+  &:hover:not([disabled]), &._hover {
+    background: var(--btn-primary__bg--hover);
+    color: var(--btn-primary__color);
   }
 
   &:focus, &.focused {
-    background-color: var(--primary-hover-bg);
-    color: var(--primary-text);
+    background: var(--btn-primary__bg--hover);
+    color: var(--btn-primary__color);
+  }
+
+  &:active, &.active {
+    background: var(--btn-primary__bg--active);
+    color: var(--btn-primary__color);
+  }
+
+  &[disabled] {
+    color: var(--btn-primary__color--disabled);
+    background: var(--btn-primary__bg--disabled);
   }
 }
 
 .role-secondary {
-  background: transparent;
-  color: var(--primary) !important;
-  border: solid 1px var(--primary);
-  line-height: $btn-height - 2px;
+  background: var(--btn-secondary__bg);
+  color: var(--btn-secondary__color);
+  border: var(--btn-secondary__border);
 
-  &:hover, &._hover {
-    color: var(--lightest) !important;
+  &:hover:not([disabled]), &._hover {
+    background: var(--btn-secondary__bg--hover);
+    color: var(--btn-secondary__color--hover);
+    border-color: var(--btn-secondary__border--hover);
   }
 
   &:focus, &.focused {
-    background-color: var(--primary-hover-bg);
-    color: var(--primary-text) !important;
+    background: var(--btn-secondary__bg--hover);
+    color: var(--btn-secondary__color--hover);
+    border-color: var(--btn-secondary__border--hover);
   }
 
   &.btn-sm {
@@ -101,20 +116,36 @@ button,
       border: 0;
     }
   }
+
+  &[disabled] {
+    color: var(--btn-secondary__color--disabled);
+    border-color: var(--btn-secondary__border--disabled);
+    background: var(--btn-secondary__bg--disabled);
+  }
 }
 
 .role-tertiary {
-  background: var(--accent-btn);
-  border: solid 1px var(--primary);
-  color: var(--primary);
+  background: var(--btn-tertiary__bg);
+  color: var(--btn-tertiary__color);
+  border: var(--btn-tertiary__border);
+  height: 30pxT;
 
-  &:focus, &.focused {
-    background-color: var(--primary-hover-bg);
-    color: var(--primary-text);
+  &:hover:not([disabled]), &._hover {
+    background: var(--btn-tertiary__bg--hover);
+    border-color: var(--btn-tertiary__border--hover);
+    color: var(--btn-tertiary__color--hover);
   }
 
-  &.btn:not(.btn-sm) {
-    line-height: $btn-height - 2px;
+  &:focus, &.focused {
+    background: var(--btn-tertiary__bg--hover);
+    border-color: var(--btn-tertiary__border--hover);
+    color: var(--btn-tertiary__color--hover);
+  }
+
+  &[disabled] {
+    color: var(--btn-tertiary__color--disabled);
+    border-color: var(--btn-tertiary__border--disabled);
+    background: var(--btn-tertiary__bg--disabled);
   }
 }
 
@@ -150,11 +181,7 @@ button,
 .btn[disabled],
 fieldset[disabled] .btn {
   cursor: not-allowed;
-  color: var(--disabled-text) !important;
-  &:not(.role-link){
-    background-color: var(--disabled-bg) !important;
-    border-color: var(--disabled-bg) !important;
-  }
+  opacity: 0.40;
 }
 
 .btn-group {
@@ -163,20 +190,52 @@ fieldset[disabled] .btn {
   vertical-align: middle;
   padding: 0;
   border-radius: var(--border-radius);
+  //border: solid 2px var(--btn-secondary__border-color);
+  overflow: hidden;
 
   .btn {
     position: relative;
     display: inline-flex;
     border-radius: 0;
     text-align: center;
+    padding: 0 20px;
+
+    .icon {
+      font-size: 16px;
+    }
 
     &:focus {
       // Move the focused one to the top so that the focus ring is all visible
       z-index: 1;
+      box-shadow: none;
     }
 
     &.active {
       @extend .bg-primary;
+    }
+
+    &.group-btn {
+      background: transparent;
+      background: var(--btn-group-bg);
+      //border: solid 2px #DCDEE7;
+      color: var(--btn-group-color);
+
+      &:hover,
+      &:focus {
+        background: var(--btn-group-bg--hover);
+      }
+    }
+
+    &.group-btn--active {
+      background: var(--selected-item);
+      //background: var(--primary);
+      //background: transparent;
+      //border: solid 2px var(--nav-selected-item);
+      color: var(--btn-group-color--active);
+
+      &:hover {
+        cursor: default;
+      }
     }
 
     &:first-child {

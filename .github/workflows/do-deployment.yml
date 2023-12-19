@@ -1,0 +1,56 @@
+name: EC2 - Dev
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - UXUI
+
+jobs:
+  pull:
+    name: Pull from Github to EC2 instance
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the files
+        uses: actions/checkout@v2
+      - name: Pull the changes
+        uses: easingthemes/ssh-deploy@main
+        with:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_KEY }}
+          REMOTE_HOST: ${{ secrets.HOST_DNS }}
+          REMOTE_USER: ${{ secrets.USERNAME }}
+          TARGET: ${{ secrets.TARGET_DIR }}
+  build:
+    name: Docker build and deploy
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Executes docker-compose
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST_DNS }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          command_timeout: 200m
+          script: |
+            cd ${{ secrets.TARGET_DIR }}
+            docker-compose down
+            docker images | grep '<none>' | awk '{print $3}' | xargs docker rmi
+            API=${{secrets.API}} docker-compose up -d --build
+  # pm2:
+  #   name: Run project with PM2
+  #   runs-on: ubuntu-latest
+  #   timeout-minutes: 30
+  #   steps:
+  #     - name: Executes docker-compose
+  #       uses: appleboy/ssh-action@master
+  #       with:
+  #         host: ${{ secrets.HOST_DNS }}
+  #         username: ${{ secrets.USERNAME }}
+  #         key: ${{ secrets.SSH_KEY }}
+  #         command_timeout: 200m
+  #         script: |
+  #           cd ${{ secrets.TARGET_DIR }}
+  #           yarn build
+  #           pm2 start ecosystem.config.js
