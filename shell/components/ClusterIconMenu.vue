@@ -150,7 +150,7 @@ export default {
 
     .cluster-pin-icon {
       color: var(--nav-icon-badge-color--active);
-      -webkit-text-stroke: var(--nav-icon-badge-border--active); 
+      -webkit-text-stroke: var(--nav-pin-border--active); 
       font-size: 16px;
     }
   }
