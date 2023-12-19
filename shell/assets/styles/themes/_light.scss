@@ -38,6 +38,8 @@ $info            : #3D98D3;
 $contrasted-dark: $darkest !default;
 $contrasted-light: $lightest !default;
 
+$brand: #2453FF;
+
 // Text selection color for terminal window (we don't want this to change with the primary color)
 // The terminal alway uses a light background, so okay to use a fixed color
 $selected: rgba(#3D98D3, .5);
@@ -57,6 +59,8 @@ BODY, .theme-light {
   --primary-border        : #{$primary};
   --primary-banner-bg     : #{rgba($primary, 0.15)};
   --primary-light-bg      : #{rgba($primary, 0.05)};
+
+  --brand: #{$brand};
 
   --btn-primary__color            : #FFFFFF;
   --btn-primary__bg               : var(--primary);
