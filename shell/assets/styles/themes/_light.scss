@@ -48,6 +48,8 @@ $drag-over: #DCDEE7;
 
 BODY, .theme-light {
 
+  --selected-item: #444b69;
+
   --primary               : #{$primary};
   --primary-hover         : #{$primary-hover};
   --primary-active        : #{$primary-active};
@@ -97,6 +99,8 @@ BODY, .theme-light {
   --btn-group-bg                  : #{$lighter};
   --btn-group-bg--hover           : #e3e6f2;
   --btn-group-color               : #54545C;
+
+  --btn-group-color--active       : #FFFFFF;
 
   .text-primary {
     color: var(--primary) !important;
@@ -370,7 +374,7 @@ BODY, .theme-light {
   --nav-active-category        : #edf4fa;
   --nav-active-category-color  : #ffffff;
   --nav-active-category--hover : #d7e6f4;
-  --nav-selected-item          : #444b69;
+  --nav-selected-item          : var(--selected-item);
   --nav-selected-item--hover   : #596088;
   --nav-icon-link              : var(--nav-selected-item);
   --nav-expander-hover         : #{darken($medium, 10%)};

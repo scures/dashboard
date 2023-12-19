@@ -227,11 +227,11 @@ fieldset[disabled] .btn {
     }
 
     &.group-btn--active {
-      //background: var(--nav-selected-item);
+      background: var(--selected-item);
       //background: var(--primary);
-      background: transparent;
-      border: solid 2px var(--nav-selected-item);
-      color: var(--nav-selected-item);
+      //background: transparent;
+      //border: solid 2px var(--nav-selected-item);
+      color: var(--btn-group-color--active);
 
       &:hover {
         cursor: default;

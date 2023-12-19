@@ -446,16 +446,16 @@ export default {
       border-left: solid 5px transparent;
 
       &.toggle A {
-        color: var(--primary);
+        color: var(--link);
       }
 
       A {
-        color: var(--primary);
+        color: var(--link);
       }
 
       &.active {
         background-color: var(--body-bg);
-        border-left: solid 5px var(--primary);
+        border-left: solid 5px var(--selected-item);
 
         & A {
           color: var(--input-label);

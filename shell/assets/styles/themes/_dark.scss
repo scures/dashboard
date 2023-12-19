@@ -31,7 +31,7 @@
 
   $drag-over: #DCDEE7;
 
-  --link: #719FFF;
+  --link: #a3c2ff;
   --link--hover: #8AAFFF;
 
   --default                    : #{$dark};
@@ -45,6 +45,8 @@
   --default-light-bg           : #{rgba($dark, 0.05)};
   --slider-light-bg            : #{rgba($darker, 1)};
   --slider-light-bg-right      : #{rgba($darker, 0)};
+
+  --selected-item: #a3c2ff;
 
   --primary                       : #577BFF;
   --primary-hover                 : #4366E6;
@@ -60,10 +62,12 @@
   --btn-group-bg                  : #454854;
   --btn-group-bg--hover           : #5A5E6E;
   --btn-group-color               : #D3D3E6;
+  
+  --btn-group-color--active       : #121b2b;
 
-  --secondary                     : #7ca6ff;
+  --secondary                     : #a3c2ff;
   --secondary-hover               : #25324D;
-  --secondary-hover-color         : #a4c1ff;
+  --secondary-hover-color         : #b8ceff;
   --secondary-active              : #0C101A;
   --btn-secondary__color          : var(--secondary);
   --btn-secondary__bg             : transparent;
@@ -117,7 +121,7 @@
   --nav-active-category        : #2F3140;
   --nav-active-category-color  : #000000;
   --nav-active-category--hover : #414459;
-  --nav-selected-item          : #a3c2ff;
+  --nav-selected-item          : var(--selected-item);
   --nav-selected-item--hover   : #b8cfff;
 
   --nav-icon-badge-bg--active     : #FFFFFF;
